@@ -62,6 +62,9 @@ try:
             c.config(text=labels_update[2].text)
         except:
             messagebox.showerror("USD to LKR Widget", "No Internet!\nPlease Turn on the Internet and \ntry to click UPDATE!")
+            a.config(text="Indicative              ---    ")
+            b.config(text="Buy                     ---    ")
+            c.config(text="Sell                    ---    ")
 
 
     update_btn = Button(frame2, text="UPDATE", fg='#367BC3', bg='#38BFA7', height=2, width=10, command=clicked, font=("Safety", 8))
