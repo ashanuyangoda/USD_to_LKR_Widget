@@ -14,7 +14,7 @@ import requests
 from zipfile import ZipFile
 
 
-def run_in_admin():
+def update_in_admin():
     # Hide the console window
     ctypes.windll.user32.ShowWindow(ctypes.windll.kernel32.GetConsoleWindow(), 0)
 
@@ -93,7 +93,7 @@ if __name__ == '__main__':
         root.config(background='#524582')
 
         try:
-            run_in_admin()
+            update_in_admin()
         except:
             pass
         else:
