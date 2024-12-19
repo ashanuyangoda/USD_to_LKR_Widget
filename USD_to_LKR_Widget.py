@@ -92,6 +92,9 @@ if __name__ == '__main__':
         root.resizable(0,0)
         root.config(background='#524582')
 
+        # transparency changes done by alpha tag
+        root.attributes('-alpha', 0.4)
+
         try:
             update_in_admin()
         except:
@@ -110,6 +113,21 @@ if __name__ == '__main__':
 
             def exit_com(event):
                 root.quit()
+
+            # make solid
+            def make_solid(e):
+                root.attributes('-alpha', 1.0)
+
+                # make transparent
+            def make_transparent(e):
+                root.attributes('-alpha', 0.3)
+
+            # make transparent when Mouse hover
+            root.bind('<Enter>', make_solid)
+            # make solid when Mouse leaves
+            root.bind('<Leave>', make_transparent)
+            # make solid when Mouse button pressed
+            root.bind('<Button>', make_solid)
 
 
             root.bind("<Button-3>", exit_com)
