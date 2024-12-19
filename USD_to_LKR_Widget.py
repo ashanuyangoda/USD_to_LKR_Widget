@@ -92,7 +92,7 @@ if __name__ == '__main__':
         root.resizable(0,0)
         root.config(background='#524582')
 
-        # transparency changes done by alpha tag
+        # transparency change by using different alpha values
         root.attributes('-alpha', 0.4)
 
         try:
@@ -118,7 +118,7 @@ if __name__ == '__main__':
             def make_solid(e):
                 root.attributes('-alpha', 1.0)
 
-                # make transparent
+            # make transparent
             def make_transparent(e):
                 root.attributes('-alpha', 0.3)
 
