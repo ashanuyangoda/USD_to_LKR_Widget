@@ -114,13 +114,14 @@ if __name__ == '__main__':
             def exit_com(event):
                 root.quit()
 
-            # make solid
             def make_solid(e):
                 root.attributes('-alpha', 1.0)
 
-            # make transparent
             def make_transparent(e):
                 root.attributes('-alpha', 0.3)
+
+            def drag_move(e):
+                root.geometry(f'+{e.x_root}+{e.y_root}')
 
             # make transparent when Mouse hover
             root.bind('<Enter>', make_solid)
@@ -128,7 +129,8 @@ if __name__ == '__main__':
             root.bind('<Leave>', make_transparent)
             # make solid when Mouse button pressed
             root.bind('<Button>', make_solid)
-
+            # drag and move the window
+            root.bind('<B1-Motion>', drag_move)
 
             root.bind("<Button-3>", exit_com)
             root.bind("<F12>", exit_com)
